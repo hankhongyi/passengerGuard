@@ -22,7 +22,7 @@
                                 <rect key="frame" x="36" y="308" width="303" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger Guard " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xb-t0-BHt">
-                                        <rect key="frame" x="85" y="0.0" width="134" height="22"/>
+                                        <rect key="frame" x="84" y="0.0" width="134" height="22"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -38,36 +38,39 @@
                                     <constraint firstAttribute="height" constant="50" id="G1M-c8-Yoo"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aK5-XR-NRY" userLabel="loginContainer">
-                                <rect key="frame" x="36" y="366" width="303" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aK5-XR-NRY" userLabel="loginContainer">
+                                <rect key="frame" x="36" y="366" width="303" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq1-xe-DsB">
-                                        <rect key="frame" x="140" y="0.0" width="24" height="80"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89r-zW-ciD">
+                                        <rect key="frame" x="51" y="0.0" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ijo-l2-K3X"/>
+                                            <constraint firstAttribute="width" constant="200" id="kNg-A2-bTy"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="DQ2-Bi-qCJ"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="aK5-XR-NRY" secondAttribute="trailing" constant="20" id="1Fq-ve-9kR"/>
                             <constraint firstItem="sdO-nW-UIG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="GfX-tD-oei"/>
                             <constraint firstItem="aK5-XR-NRY" firstAttribute="top" secondItem="sdO-nW-UIG" secondAttribute="bottom" constant="8" id="WaV-bB-AQE"/>
                             <constraint firstItem="sdO-nW-UIG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aOI-uu-fdg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aK5-XR-NRY" secondAttribute="trailing" constant="20" id="beE-l1-JGK"/>
+                            <constraint firstItem="aK5-XR-NRY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="em3-uJ-WcB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sdO-nW-UIG" secondAttribute="trailing" constant="20" id="lHT-6D-d0k"/>
-                            <constraint firstItem="aK5-XR-NRY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="opV-Se-p3J"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="facebookLoginContainer" destination="89r-zW-ciD" id="U6h-Ho-3oa"/>
+                        <outlet property="loginContainer" destination="aK5-XR-NRY" id="vWj-PP-ZRD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="535"/>
+            <point key="canvasLocation" x="147" y="635"/>
         </scene>
     </scenes>
 </document>

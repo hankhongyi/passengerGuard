@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var facebookLoginContainer: UIView!
+    @IBOutlet weak var loginContainer: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let instanceOfCustomObject: CustomObject = CustomObject()
-//        instanceOfCustomObject.someProperty = "Hello World"
-//        print(instanceOfCustomObject.someProperty)
-//        instanceOfCustomObject.someMethod()
+        let facebookEngine:FacebookEngine = FacebookEngine()
+        facebookEngine.addLoginButton(facebookLoginContainer)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
