@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+//        let instanceOfCustomObject: CustomObject = CustomObject()
+//        instanceOfCustomObject.someProperty = "Hello World"
+//        print(instanceOfCustomObject.someProperty)
+//        instanceOfCustomObject.someMethod()
     }
 
     override func didReceiveMemoryWarning() {
