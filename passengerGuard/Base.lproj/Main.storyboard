@@ -66,17 +66,34 @@
                     <connections>
                         <outlet property="facebookLoginContainer" destination="89r-zW-ciD" id="U6h-Ho-3oa"/>
                         <outlet property="loginContainer" destination="aK5-XR-NRY" id="vWj-PP-ZRD"/>
-                        <segue destination="DwG-yi-gSt" kind="show" identifier="mapViewSegue" animates="NO" id="4AR-iX-VhO"/>
+                        <segue destination="SgX-M3-ZgQ" kind="show" identifier="mapViewSegue" animates="NO" id="ARm-gx-M03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="37.5" y="636.5"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Ctd-mE-gtt">
+            <objects>
+                <navigationController id="SgX-M3-ZgQ" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bs-BU-FPz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DwG-yi-gSt" kind="relationship" relationship="rootViewController" id="YSF-v7-Jmg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ca7-7Y-pYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650.5" y="636.5"/>
+        </scene>
+        <!--MapViewController-->
         <scene sceneID="oFN-oD-TkK">
             <objects>
-                <viewController storyboardIdentifier="MapViewControllerIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwG-yi-gSt" customClass="MapViewController" customModule="passengerGuard" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewControllerIdentifier" title="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwG-yi-gSt" customClass="MapViewController" customModule="passengerGuard" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZzA-Cj-R3j"/>
                         <viewControllerLayoutGuide type="bottom" id="aNo-AA-wfY"/>
@@ -84,14 +101,26 @@
                     <view key="view" contentMode="scaleToFill" id="cOl-EW-dUG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="59X-E7-Cf0">
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="59X-E7-Cf0" secondAttribute="trailing" constant="-20" id="4yH-tS-qLY"/>
+                            <constraint firstItem="aNo-AA-wfY" firstAttribute="top" secondItem="59X-E7-Cf0" secondAttribute="bottom" id="dNg-rh-hYS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="59X-E7-Cf0" secondAttribute="leading" constant="20" id="lRl-RY-G1H"/>
+                            <constraint firstItem="59X-E7-Cf0" firstAttribute="top" secondItem="ZzA-Cj-R3j" secondAttribute="bottom" id="pZD-MR-F05"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cyi-cX-GQR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Trz-xT-HXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662.5" y="636.5"/>
+            <point key="canvasLocation" x="650.5" y="1517.5"/>
         </scene>
     </scenes>
 </document>

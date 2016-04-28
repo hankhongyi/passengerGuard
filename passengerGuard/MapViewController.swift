@@ -10,6 +10,11 @@ import UIKit
 
 class MapViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "MapView"
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //TODO
     }
