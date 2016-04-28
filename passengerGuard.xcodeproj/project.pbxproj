@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06155BD145F7840FA7FC8787 /* Pods_passengerGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */; };
+		6BD55A991CD1BC930006151B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD55A981CD1BC930006151B /* MapViewController.swift */; };
+		6BD55A9B1CD21DF70006151B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD55A9A1CD21DF70006151B /* MapKit.framework */; };
 		6BE1CB8E1CC6333C00974747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1CB8D1CC6333C00974747 /* AppDelegate.swift */; };
 		6BE1CB901CC6333C00974747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1CB8F1CC6333C00974747 /* ViewController.swift */; };
 		6BE1CB931CC6333C00974747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE1CB911CC6333C00974747 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		0434EBE5AFA282D63F8FAE75 /* Pods-passengerGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passengerGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-passengerGuard/Pods-passengerGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCD56353998D5C85C00EF7E /* Pods-passengerGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passengerGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-passengerGuard/Pods-passengerGuard.release.xcconfig"; sourceTree = "<group>"; };
 		492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_passengerGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD55A981CD1BC930006151B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6BD55A9A1CD21DF70006151B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BE1CB8A1CC6333C00974747 /* passengerGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = passengerGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE1CB8D1CC6333C00974747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE1CB8F1CC6333C00974747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD55A9B1CD21DF70006151B /* MapKit.framework in Frameworks */,
 				06155BD145F7840FA7FC8787 /* Pods_passengerGuard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +55,7 @@
 		14944C139EE065CA42D535B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6BD55A9A1CD21DF70006151B /* MapKit.framework */,
 				492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */,
 			);
 			name = Frameworks;
@@ -78,6 +84,7 @@
 			children = (
 				6BE1CB8D1CC6333C00974747 /* AppDelegate.swift */,
 				6BE1CB8F1CC6333C00974747 /* ViewController.swift */,
+				6BD55A981CD1BC930006151B /* MapViewController.swift */,
 				6BE1CB911CC6333C00974747 /* Main.storyboard */,
 				6BE1CB941CC6333C00974747 /* Assets.xcassets */,
 				6BE1CB961CC6333C00974747 /* LaunchScreen.storyboard */,
@@ -135,6 +142,11 @@
 				TargetAttributes = {
 					6BE1CB891CC6333C00974747 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -225,6 +237,7 @@
 				6BE1CB901CC6333C00974747 /* ViewController.swift in Sources */,
 				6BFA39521CCA1CA40008CF4F /* CustomObject.m in Sources */,
 				6BE1CB8E1CC6333C00974747 /* AppDelegate.swift in Sources */,
+				6BD55A991CD1BC930006151B /* MapViewController.swift in Sources */,
 				6BFA39561CCA251E0008CF4F /* FacebookEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = passengerGuard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.formosastudio.passengerGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,6 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = passengerGuard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.formosastudio.passengerGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -17,4 +17,5 @@
 @interface FacebookEngine : NSObject
 
 -(void)addLoginButton:(UIView *)container;
+-(BOOL)isUserLoggedIn;
 @end

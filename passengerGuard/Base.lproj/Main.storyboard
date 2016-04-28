@@ -22,7 +22,7 @@
                                 <rect key="frame" x="36" y="308" width="303" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passenger Guard " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xb-t0-BHt">
-                                        <rect key="frame" x="84" y="0.0" width="134" height="22"/>
+                                        <rect key="frame" x="85" y="0.0" width="134" height="22"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                                 <rect key="frame" x="36" y="366" width="303" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89r-zW-ciD">
-                                        <rect key="frame" x="51" y="0.0" width="200" height="40"/>
+                                        <rect key="frame" x="52" y="0.0" width="200" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ijo-l2-K3X"/>
@@ -66,11 +66,32 @@
                     <connections>
                         <outlet property="facebookLoginContainer" destination="89r-zW-ciD" id="U6h-Ho-3oa"/>
                         <outlet property="loginContainer" destination="aK5-XR-NRY" id="vWj-PP-ZRD"/>
+                        <segue destination="DwG-yi-gSt" kind="show" identifier="mapViewSegue" animates="NO" id="4AR-iX-VhO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147" y="635"/>
+            <point key="canvasLocation" x="37.5" y="636.5"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="oFN-oD-TkK">
+            <objects>
+                <viewController storyboardIdentifier="MapViewControllerIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwG-yi-gSt" customClass="MapViewController" customModule="passengerGuard" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZzA-Cj-R3j"/>
+                        <viewControllerLayoutGuide type="bottom" id="aNo-AA-wfY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cOl-EW-dUG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Trz-xT-HXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662.5" y="636.5"/>
         </scene>
     </scenes>
 </document>

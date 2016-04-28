@@ -18,7 +18,17 @@
     // Optional: Place the button in the center of your view.
     //loginButton.center = container.center;
     loginButton.center = CGPointMake(container.frame.size.width  / 2, container.frame.size.height / 2);
+    loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     [container addSubview:loginButton];
+}
+
+-(BOOL)isUserLoggedIn {
+    FBSDKAccessToken *accessToken = [FBSDKAccessToken currentAccessToken];
+    if (accessToken.tokenString) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
