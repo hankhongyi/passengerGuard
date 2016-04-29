@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06155BD145F7840FA7FC8787 /* Pods_passengerGuard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */; };
+		6B99BFC01CD3148F00A26FD7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B99BFBF1CD3148F00A26FD7 /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6B99BFC21CD314A300A26FD7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B99BFC11CD314A300A26FD7 /* Accounts.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6B99BFC41CD314FA00A26FD7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B99BFC31CD314FA00A26FD7 /* Social.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6BD55A991CD1BC930006151B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD55A981CD1BC930006151B /* MapViewController.swift */; };
 		6BD55A9B1CD21DF70006151B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD55A9A1CD21DF70006151B /* MapKit.framework */; };
 		6BE1CB8E1CC6333C00974747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1CB8D1CC6333C00974747 /* AppDelegate.swift */; };
@@ -23,6 +26,9 @@
 		0434EBE5AFA282D63F8FAE75 /* Pods-passengerGuard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passengerGuard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-passengerGuard/Pods-passengerGuard.debug.xcconfig"; sourceTree = "<group>"; };
 		2FCD56353998D5C85C00EF7E /* Pods-passengerGuard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-passengerGuard.release.xcconfig"; path = "Pods/Target Support Files/Pods-passengerGuard/Pods-passengerGuard.release.xcconfig"; sourceTree = "<group>"; };
 		492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_passengerGuard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B99BFBF1CD3148F00A26FD7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		6B99BFC11CD314A300A26FD7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		6B99BFC31CD314FA00A26FD7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6BD55A981CD1BC930006151B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6BD55A9A1CD21DF70006151B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BE1CB8A1CC6333C00974747 /* passengerGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = passengerGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B99BFC41CD314FA00A26FD7 /* Social.framework in Frameworks */,
+				6B99BFC21CD314A300A26FD7 /* Accounts.framework in Frameworks */,
+				6B99BFC01CD3148F00A26FD7 /* AdSupport.framework in Frameworks */,
 				6BD55A9B1CD21DF70006151B /* MapKit.framework in Frameworks */,
 				06155BD145F7840FA7FC8787 /* Pods_passengerGuard.framework in Frameworks */,
 			);
@@ -55,6 +64,9 @@
 		14944C139EE065CA42D535B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B99BFC31CD314FA00A26FD7 /* Social.framework */,
+				6B99BFC11CD314A300A26FD7 /* Accounts.framework */,
+				6B99BFBF1CD3148F00A26FD7 /* AdSupport.framework */,
 				6BD55A9A1CD21DF70006151B /* MapKit.framework */,
 				492D685896221DFC2F3B14FA /* Pods_passengerGuard.framework */,
 			);
@@ -142,6 +154,7 @@
 				TargetAttributes = {
 					6BE1CB891CC6333C00974747 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = EVP4V6CC5X;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -355,11 +368,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = passengerGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.formosastudio.passengerGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "passengerGuard/passengerGuard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -371,11 +387,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = passengerGuard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.formosastudio.passengerGuard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "passengerGuard/passengerGuard-Bridging-Header.h";
 			};
 			name = Release;

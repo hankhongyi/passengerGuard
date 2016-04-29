@@ -12,6 +12,35 @@
 
 @implementation FacebookEngine: NSObject
 
+NSString *facebookAPIKey = @"854551464673624";
+NSString *facebookAccountKey = @"FacebookAccount";
+
+
++(id)sharedInstance {
+    static FacebookEngine *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
++(id)sharedManager {
+    static FacebookEngine *sharedEngineManager = nil;
+    @synchronized(self) {
+        if (sharedEngineManager == nil)
+            sharedEngineManager = [[self alloc] init];
+    }
+    return sharedEngineManager;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        _accountStore = [[ACAccountStore alloc] init];
+    }
+    return self;
+}
+
 -(void)addLoginButton:(UIView *)container
 {
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
@@ -29,6 +58,33 @@
     } else {
         return NO;
     }
+}
+
+-(void)facebookLogin {
+    ACAccountType *facebookTypeAccount = [_accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
+    
+    [_accountStore requestAccessToAccountsWithType:facebookTypeAccount
+            options:@{ACFacebookAppIdKey: facebookAPIKey, ACFacebookPermissionsKey: @[@"email", @"user_posts"]}
+            completion:^(BOOL granted, NSError *error) {
+            if(granted){
+                NSArray *accounts = [_accountStore accountsWithAccountType:facebookTypeAccount];
+                _facebookAccount = [accounts lastObject];
+                [[NSUserDefaults standardUserDefaults]setObject:_facebookAccount forKey:facebookAccountKey];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                NSLog(@"Login success");
+            }else{
+                NSLog(@"Login fail");
+                NSLog(@"Error message: %@", error);
+            }
+    }];
+}
+
+-(BOOL)isFacebookUserLoggedIn {
+    ACAccount *savedAccount = [[NSUserDefaults standardUserDefaults] objectForKey:facebookAccountKey];
+    if (savedAccount != nil) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

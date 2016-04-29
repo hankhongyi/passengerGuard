@@ -22,9 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //This is here to show how to add observer
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(facebookAccessTokenChanged), name: FBSDKAccessTokenDidChangeNotification, object: nil)
-        
+    
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         
         return true
     }
@@ -55,9 +54,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
+    func applicationDidFinishLaunching(application: UIApplication) {
+        // initialize user defaults
+        let dateKey = "dateKey"
+        let lastRead = NSUserDefaults.standardUserDefaults().objectForKey(dateKey)
+        if (lastRead == nil)     // App first run: set up user defaults.
+        {
+            let appDefaults: [String:NSDate] = [dateKey:NSDate()]
+            // do any other initialization you want to do here - e.g. the starting default values.
+            // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
+            
+            // sync the defaults to disk
+            NSUserDefaults.standardUserDefaults().registerDefaults(appDefaults)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: dateKey)
+        
+        if(FacebookEngine.sharedInstance().isFacebookUserLoggedIn()) {
+            print("Logged in")
+        } else {
+            print("not logged in")
+        }
+    }
+    
     //sample code for adding observer
     @objc func facebookAccessTokenChanged(notification:NSNotification) {
-        let facebookEngine = FacebookEngine()
+        let facebookEngine = FacebookEngine.sharedInstance()
         isUserLoggedIn = facebookEngine.isUserLoggedIn()
     }
 
